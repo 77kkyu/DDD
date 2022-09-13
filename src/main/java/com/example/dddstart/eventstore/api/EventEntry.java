@@ -12,8 +12,7 @@ public class EventEntry {
 
     private long timestamp;
 
-    public EventEntry(Long id, String type, String contentType, String payload) {
-        this.id = id;
+    public EventEntry(String type, String contentType, String payload) {
         this.type = type;
         this.contentType = contentType;
         this.payload = payload;
