@@ -32,13 +32,12 @@ public class OrderLine {
 	public OrderLine(
 		ProductId productId,
 		Money price,
-		int quantity,
-		Money amounts
+		int quantity
 	) {
 		this.productId = productId;
 		this.price = price;
 		this.quantity = quantity;
-		this.amounts = amounts;
+		this.amounts = calculateAmounts();
 	}
 
 	private Money calculateAmounts() {
