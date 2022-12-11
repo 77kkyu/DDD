@@ -19,7 +19,7 @@ public class CancelOrderService {
 	@Transactional
 	public void cancel(OrderNo orderNo, Canceller canceller) {
 		Order order = orderRepository.findById(orderNo)
-			.orElseThrow(() -> new NoOrderException());
+			.orElseThrow(NoOrderException::new);
 		if (!cancelPolicy.hasCancellationPermission(order, canceller))
 			throw new NoCancellablePermission();
 
